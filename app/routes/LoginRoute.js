@@ -1,12 +1,8 @@
 const express = require('express');
-const bodyParser = require('body-parser'); 
 const mysqlConnection = require('../config/Transaction');
 const {createToken} = require('../config/Jwt');
 
 var loginApp = express();
-loginApp.use(bodyParser.urlencoded({ extended: true })); 
-loginApp.use(bodyParser.json());
-loginApp.use(bodyParser.raw());  
 
 loginApp.post('/', (req, res) => {
     mysqlConnection.query('select * from user where username = ? and password = ?',
