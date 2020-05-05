@@ -2,7 +2,7 @@
 
 Rest end points secured by JWT in connection with MySQL.
 
-####Requirements
+#### Requirements
 
 - NodeJs - 12.6
 
@@ -14,7 +14,7 @@ Rest end points secured by JWT in connection with MySQL.
 
 - PM2 Service to run the nodeJs Application
 
-####Installation
+#### Installation
 
 - Ubuntu
 	- Download the required node version here.
@@ -47,7 +47,7 @@ v12.16.3
 			npm -v
 6.14.4
 
-####Run the application
+#### Run the application
 
 - Clone the project and run the following command to install npm.
 
