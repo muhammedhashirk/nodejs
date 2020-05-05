@@ -15,10 +15,8 @@ Rest end points secured by JWT in connection with MySQL.
 #### Installation
 
 - Ubuntu
-	- Download the required node version here.
+	- Download and install the required node version
 https://nodejs.org/dist/latest-v12.x/node-v12.16.3-linux-x64.tar.gz
-
-	- Run the follwing commands from the downloaded directory.
 
 			$ tar xf node-v12.16.3-linux-x64.tar.gz
 			$ sudo cp -r node-v12.16.3-linux-x64/{bin,include,lib,share} /usr/
@@ -31,10 +29,8 @@ https://nodejs.org/dist/latest-v12.x/node-v12.16.3-linux-x64.tar.gz
 			6.14.4
 
 - Windows
-	- Download the required node version here.
+	- Download and install the required node version.
 https://nodejs.org/en/download/
-
-	- After downloading run the installer to install the node js.
 
 	- verify the installation by running the following commands.
 
