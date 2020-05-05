@@ -1,4 +1,4 @@
-# Therigy
+# Node Js Appliaction
 
 Rest end points secured by JWT in connection with MySQL.
 
