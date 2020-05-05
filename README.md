@@ -1,4 +1,4 @@
-# Node Js Appliaction
+# Node Js Application
 
 Rest end points secured by JWT in connection with MySQL.
 
