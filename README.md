@@ -31,13 +31,15 @@ https://nodejs.org/en/download/
 
 #### Run the application
 
-- Clone the project and run the following command to run.
+ Clone the project and run the following commands to run.
 
 	  $ npm install
 	  $ npm start
 
 
+Sample Rest End Points:
 
-
-
+	  POST - localhost:2000/login
+	  GET - localhost:2000/info/listAll
+	  GET -  localhost:2000/info/list/{code}
 
