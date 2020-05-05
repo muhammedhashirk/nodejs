@@ -12,8 +12,6 @@ Rest end points secured by JWT in connection with MySQL.
 
 - MySQL Connector - 2.18.1
 
-- PM2 Service to run the nodeJs Application
-
 #### Installation
 
 - Ubuntu
@@ -28,9 +26,9 @@ https://nodejs.org/dist/latest-v12.x/node-v12.16.3-linux-x64.tar.gz
 	- verify the installation by running the following commands.
 
 			$ node -v
-				v12.16.3
+			v12.16.3
 			$ npm -v
-				6.14.4
+			6.14.4
 
 - Windows
 	- Download the required node version here.
@@ -41,9 +39,9 @@ https://nodejs.org/en/download/
 	- verify the installation by running the following commands.
 
 			node -v
-				v12.16.3
+			v12.16.3
 			npm -v
-				6.14.4
+			6.14.4
 
 #### Run the application
 
