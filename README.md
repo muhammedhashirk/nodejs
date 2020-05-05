@@ -28,10 +28,9 @@ https://nodejs.org/dist/latest-v12.x/node-v12.16.3-linux-x64.tar.gz
 	- verify the installation by running the following commands.
 
 			$ node -v
-v12.16.3
-
+				v12.16.3
 			$ npm -v
-6.14.4
+				6.14.4
 
 - Windows
 	- Download the required node version here.
@@ -42,10 +41,9 @@ https://nodejs.org/en/download/
 	- verify the installation by running the following commands.
 
 			node -v
-v12.16.3
-
+				v12.16.3
 			npm -v
-6.14.4
+				6.14.4
 
 #### Run the application
 
@@ -56,3 +54,9 @@ v12.16.3
 - Start application using the command
 
 			$ npm start
+
+
+
+
+
+
