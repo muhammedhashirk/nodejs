@@ -1,22 +1,26 @@
-const mysqlConnection = require('../config/Transaction');
-const Info = require('../model/InfoModel');
+const connectionPool = require('../config/TransactionManager');
 
-exports.findAll = () => {
-  return new Promise(function(resolve, reject){
-    const sql = "select * from info";
-    mysqlConnection.query(sql, (err, result) => {
-      if (err) reject(err);
-      resolve(result);
-    });
-  });
-};
+class InfoRepository {
 
-exports.findByCode = (code) => {
-  return new Promise(function(resolve, reject){
-    const sql = "select * from info where code = ?";
-    mysqlConnection.query(sql, [code], (err, result) => {
-      if (err) reject(err);
-      resolve(result);
+  static findAll(){
+    return new Promise(function(resolve, reject){
+      const sql = "select * from info";
+      connectionPool.query(sql, (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
-  });
-};
+  }
+
+  static findByCode(code){
+    return new Promise(function(resolve, reject){
+      const sql = "select * from info where code = ?";
+      connectionPool.query(sql, [code], (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
+    });
+  }
+}
+
+module.exports = InfoRepository;

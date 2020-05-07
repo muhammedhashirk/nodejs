@@ -1,22 +1,28 @@
+var HttpStatus = require('http-status-codes');
+
 const infoRepo = require('../repository/InfoRepository');
 const Response = require('../model/ResponseModel');
 
-exports.listAllInfo = async (req, res) => {
+exports.listAllInfo = async (request, response) => {
     try{
         var info = await infoRepo.findAll();
-        res.send(Response.success(info));
+        response.send(Response.success(info));
     }
     catch(err){
-        res.status(500).send(Response.failure(err.message || "Internal server error."));
+        response
+        .status(HttpStatus.INTERNAL_SERVER_ERROR)
+        .send(Response.failure(err.message || HttpStatus.getStatusText(HttpStatus.INTERNAL_SERVER_ERROR)));
     }
 };
 
-exports.listByCode = async (req, res) => {
+exports.listByCode = async (request, response) => {
     try{
-        var info = await infoRepo.findByCode(req.params.code);
-        res.send(Response.success(info));
+        var info = await infoRepo.findByCode(request.params.code);
+        response.send(Response.success(info));
     }
     catch(err){
-        res.status(500).send(Response.failure(err.message || "Internal server error."));
+        response
+        .status(HttpStatus.INTERNAL_SERVER_ERROR)
+        .send(Response.failure(err.message || HttpStatus.getStatusText(HttpStatus.INTERNAL_SERVER_ERROR)));
     }
 };

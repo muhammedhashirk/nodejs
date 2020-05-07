@@ -1,12 +1,9 @@
-const express = require('express');
+const router = require('express').Router();
 const {validateToken} = require('../config/Jwt');
 const infoService = require('../service/InfoService');
 
-var infoApp = express(); 
+router.get('/listAll', validateToken, infoService.listAllInfo);
 
-infoApp.get('/listAll', validateToken, infoService.listAllInfo);
+router.get('/list/:code', validateToken, infoService.listByCode);
 
-infoApp.get('/list/:code', validateToken, infoService.listByCode);
-
-
-module.exports = infoApp;
+module.exports = router;
