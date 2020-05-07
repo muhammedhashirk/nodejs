@@ -1,26 +1,22 @@
 const infoRepo = require('../repository/InfoRepository');
+const Response = require('../model/ResponseModel');
 
-
-exports.listAllInfo = (req, res) => {
-    infoRepo.findAll((err, data) => {
-        if (err)
-        res.status(500).send({
-            message: err.message || "Some error occurred."
-        });
-        else{
-            res.send(data);
-        }
-    });
+exports.listAllInfo = async (req, res) => {
+    try{
+        var info = await infoRepo.findAll();
+        res.send(Response.success(info));
+    }
+    catch(err){
+        res.status(500).send(Response.failure(err.message || "Internal server error."));
+    }
 };
 
-exports.listByCode = (req, res) => {
-    infoRepo.findByCode(req.params.code, (err, data) => {
-        if (err)
-        res.status(500).send({
-            message: err.message || "Some error occurred."
-        });
-        else{
-            res.send(data);
-        }
-    });
+exports.listByCode = async (req, res) => {
+    try{
+        var info = await infoRepo.findByCode(req.params.code);
+        res.send(Response.success(info));
+    }
+    catch(err){
+        res.status(500).send(Response.failure(err.message || "Internal server error."));
+    }
 };

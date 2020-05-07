@@ -1,24 +1,22 @@
 const mysqlConnection = require('../config/Transaction');
 const Info = require('../model/InfoModel');
 
-exports.findAll = result => {
-  mysqlConnection.query("select * from info", (err, res) => {
-    if (err) {
-      console.log("error: ", err);
-      result(null, err);
-      return;
-    }
-    result(null, res);
+exports.findAll = () => {
+  return new Promise(function(resolve, reject){
+    const sql = "select * from info";
+    mysqlConnection.query(sql, (err, result) => {
+      if (err) reject(err);
+      resolve(result);
+    });
   });
 };
 
-exports.findByCode = (code, result) => {
-  mysqlConnection.query("select * from info where code = ?",[code], (err, res) => {
-    if (err) {
-      console.log("error: ", err);
-      result(null, err);
-      return;
-    }
-    result(null, res);
+exports.findByCode = (code) => {
+  return new Promise(function(resolve, reject){
+    const sql = "select * from info where code = ?";
+    mysqlConnection.query(sql, [code], (err, result) => {
+      if (err) reject(err);
+      resolve(result);
+    });
   });
 };
