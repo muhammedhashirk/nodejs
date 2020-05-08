@@ -1,4 +1,4 @@
-var HttpStatus = require('http-status-codes');
+const HttpStatus = require('http-status-codes');
 
 const userRepo = require('../repository/UserRepository');
 const {createToken} = require('../config/Jwt');
