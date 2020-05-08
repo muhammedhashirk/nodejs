@@ -1,11 +1,11 @@
-var HttpStatus = require('http-status-codes');
+const HttpStatus = require('http-status-codes');
 
 const infoRepo = require('../repository/InfoRepository');
 const Response = require('../model/ResponseModel');
 
 exports.listAllInfo = async (request, response) => {
     try{
-        var info = await infoRepo.findAll();
+        let info = await infoRepo.findAll();
         response.send(Response.success(info));
     }
     catch(err){
@@ -17,7 +17,7 @@ exports.listAllInfo = async (request, response) => {
 
 exports.listByCode = async (request, response) => {
     try{
-        var info = await infoRepo.findByCode(request.params.code);
+        let info = await infoRepo.findByCode(request.params.code);
         response.send(Response.success(info));
     }
     catch(err){
