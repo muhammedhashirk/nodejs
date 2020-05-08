@@ -46,3 +46,17 @@ function validateCredentials(username, password){
         return "Length of password should not be less than 5";
     return null;
 }
+exports.forgotPassword = async  (request, response) => {
+    const {email} = request.body;
+    let user = await userRepo.findByEmail(email);
+    if (user){
+        response.send(Response.success({message:"An email has been sent to " + user.email + " with further instructions"}));
+    }
+    else{
+        response
+        .status(HttpStatus.BAD_REQUEST)
+        .send(Response.failure("Email entered is invalid"));
+    }
+
+    
+}
